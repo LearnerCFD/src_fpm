@@ -1,0 +1,17 @@
+#! /bin/csh -f
+
+echo "Enter the directory to diff"
+set tdir = $<    
+echo "Enter Coding Language"
+set codext = $<
+
+set fname = "dir.diff."$codext 
+echo $fname
+foreach ff ( -f *.$codext)
+ echo "diffing " $ff >> $fname
+ if (-f $tdir$ff) then 
+  diff $ff $tdir$ff  >> $fname
+ else 
+  echo "File not Found" $ff
+ endif
+end 

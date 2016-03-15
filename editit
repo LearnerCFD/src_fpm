@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nedit mak* who* *.F90 notes ReadMe Steps &
